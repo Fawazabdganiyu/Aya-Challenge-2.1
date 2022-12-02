@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Budget Calculator</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="main_container">		
+			<div class="data">				
+					<h2>Please provide the information below</h2>
+					<table class="data_table">
+					<tr>
+					<td><label for="income">Income:</label></td>
+					<td><input id="income" type="text" name="income"></td>
+					</tr>
+					<tr>
+					<td><label for="age">Age:</label></td>
+					<td><input id="age" type="text" name="age"></td>
+					</tr>
+					<tr>
+					<td><label for="gender">Gender:</label></td>
+					<td><input id="gender" type="text" name="gender"></td>
+					</tr>
+					<tr>
+					<td><label for="marital_status">Marital Status:</label></td>
+					<td><input id="marital_status" type="text" name="marital_status"></td>
+					</tr>
+					<tr>
+					<td><label for="number_of_dependents">Number of Dependents:</label></td>
+					<td><input id="dependents" type="text" name="number_of_dependents"></td>
+					</tr>
+					</table>				
+			</div>
+			<div class="budget">
+				<h2>Enter your budgets here</h2>				
+					<table class="budget_table">
+						<tr>
+						<th>Budget</th><th>Amount (#)</th><th>Percentage</th>
+						</tr>
+						<tr>
+							<td>Rent</td>
+							<td><input id="rent" type="text" name="rent"></td>
+							<td id="rent%"></td>
+						</tr>
+						<tr>
+							<td>Water</td>
+							<td><input id="water" type="text" name="water"></td>
+							<td id="water%"></td>
+						</tr>
+						<tr>
+							<td>Electricity</td>
+							<td><input id="electricity" type="text" name="electricity"></td>
+							<td id="electricity%"></td>
+						</tr>
+						<tr>
+							<td>Food</td>
+							<td><input id="food" type="text" name="food"></td>
+							<td id="food%"></td>
+						</tr>
+						<tr>
+							<td>Transport</td>
+							<td><input id="transport" type="text" name="transport"></td>
+							<td id="transport%"></td>
+						</tr>
+						<tr>
+							<td>Clothings</td>
+							<td><input id="clothings" type="text" name="clothings"></td>
+							<td id="clothings%"></td>
+						</tr>
+						<tr>
+							<td>School fees</td>
+							<td><input id="school" type="text" name="school"></td>
+							<td id="school%"></td>
+						</tr>
+						<tr>
+							<td>Fuel</td>
+							<td><input id="fuel" type="text" name="fuel"></td>
+							<td id="fuel%"></td>
+						</tr>
+						<tr>
+							<td>Food ingredient</td>
+							<td><input id="ingredient" type="text" name="ingredient"></td>
+							<td id="ingredient%"></td>
+						</tr>
+						<tr>
+							<td>Miscellenous</td>
+							<td><input id="miscellenous" type="text" name="miscellenous"></td>
+							<td id="miscellenous%"></td>
+						</tr>
+						<tr>
+							<td>Total</td>
+							<td id="total"></td>
+							<td id="total%"></td>
+						</tr>
+						<tr><td><button onclick="percent()">Calculate</button></td></tr>
+					</table>				
+			</div>
+			<script type="text/javascript">				
+				function percent() {
+					// alert('yrs');
+					var r= Number(document.getElementById('rent').value);					
+					// alert(r);					
+					var w= Number(document.getElementById('water').value);
+					// alert(w);					
+					var e= Number(document.getElementById('electricity').value);
+					// alert(e);
+					var f= Number(document.getElementById('food').value);
+					var t= Number(document.getElementById('transport').value);
+					var c= Number(document.getElementById('clothings').value);
+					var s= Number(document.getElementById('school').value);
+					var fl= Number(document.getElementById('fuel').value);					
+					var i= Number(document.getElementById('ingredient').value);
+					var m= Number(document.getElementById('miscellenous').value);
+					// alert(m);					
+					var total= r + w + e + f + t + c + s + fl + i + m;
+					// alert(total);
+					// total=r+w+e+f+t+c+s+fl+i+m;
+					var rp= (r/total)*100;
+					var wp= (w/total)*100;
+					var fp= (f/total)*100;
+					var tp= (t/total)*100;
+					var ep= (e/total)*100;
+					// alert(ep);
+					var cp= (c/total)*100;
+					var flp= (fl/total)*100;
+					var ip= (i/total)*100;
+					var mp= (m/total)*100;
+					// alert(mp);
+					var sp= (s/total)*100;
+					var totalp= (rp + wp + fp + tp + ep + cp + flp + ip + mp + sp);
+					// alert(totalp);					
+					document.getElementById('total%').innerHTML=totalp.toFixed(2);			
+					document.getElementById("rent%").innerHTML=rp.toFixed(2);				
+					document.getElementById("water%").innerHTML=wp.toFixed(2);				
+					document.getElementById("electricity%").innerHTML=ep.toFixed(2);		
+					document.getElementById("food%").innerHTML=fp.toFixed(2);			
+					document.getElementById("transport%").innerHTML=tp.toFixed(2);			
+					document.getElementById("clothings%").innerHTML=cp.toFixed(2);			
+					document.getElementById("school%").innerHTML=sp.toFixed(2);				
+					document.getElementById("fuel%").innerHTML=flp.toFixed(2);				
+					document.getElementById("ingredient%").innerHTML=ip.toFixed(2);			
+					document.getElementById("miscellenous%").innerHTML=mp.toFixed(2);
+					// // document.getElementById("water%").innerHTML=wp;
+				}
+			</script>		
+	</div>
+
+</body>
+</html>

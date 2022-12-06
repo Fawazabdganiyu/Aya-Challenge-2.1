@@ -74,7 +74,7 @@
 							<td>School fees</td>
 							<td><input id="school" type="text" name="school"></td>
 							<td id="school%"></td>
-						</tr>
+						</tr>	
 						<tr>
 							<td>Fuel</td>
 							<td><input id="fuel" type="text" name="fuel"></td>
@@ -131,7 +131,8 @@
 					// alert(mp);
 					var sp= (s/total)*100;
 					var totalp= (rp + wp + fp + tp + ep + cp + flp + ip + mp + sp);
-					// alert(totalp);					
+					// alert(totalp);	
+					document.getElementById('total').innerHTML=total.toFixed(2);				
 					document.getElementById('total%').innerHTML=totalp.toFixed(2);			
 					document.getElementById("rent%").innerHTML=rp.toFixed(2);				
 					document.getElementById("water%").innerHTML=wp.toFixed(2);				
